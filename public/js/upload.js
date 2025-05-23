@@ -18,7 +18,7 @@ resultDiv.innerHTML = `
 <style>
 .popup-container {
 position: fixed;
-top: 0;
+top: -7%;
 left: 0;
 width: 100vw;
 height: 100vh;
