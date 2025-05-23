@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta property="og:url" content="https://api.zero-two.online">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Zero Two | Uploads">
+  <meta property="og:description" content="Uma rest-api para você fazer seus uploads...">
+  <meta property="og:image" content="images/ad5db66b4b181ef84a5a1.jpg">
+  <link rel="shortcut icon" href="images/ad5db66b4b181ef84a5a1.jpg">
+  <title>Upload de Arquivos - By: ThZ Frosty ¿?</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <!-- Botão de Suporte Flutuante -->
+<style>
+  .support-floating {
+    position: fixed;
+    bottom: 70px;
+    left: 18px;
+    z-index: 9999;
+  }
+
+  .support-button {
+    background-color: #00bfff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    color: white;
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  }
+
+  .support-menu {
+    display: none;
+    flex-direction: column;
+    background: #1a1a1a;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 5px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  }
+
+  .support-item {
+    display: flex;
+    align-items: center;
+    color: white;
+    margin: 5px 0;
+    text-decoration: none;
+  }
+
+  .support-item img {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+  }
+
+  .support-item:hover {
+    color: #00bfff;
+  }
+</style>
+</head>
+<body>
+
+<audio id="backgroundAudio" hidden>
+  <source src="media/upload-api-music.mp3" type="audio/mpeg">
+</audio>
+
+<video autoplay muted loop id="background-video">
+  <source src="media/upload-api.mp4" type="video/mp4">
+</video>
+
+<div class="container">
+  <form id="uploadForm" action="/upload" method="post" enctype="multipart/form-data">
+    <div class="upload-box"> 
+      <label for="fileInput" class="upload-label" style="display: flex; align-items: center;">
+        <div class="icon" style="margin-right: 10px;">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width: 50px; height: 50px;">
+            <path d="..." fill=""></path>
+          </svg>
+        </div>
+        <span>Selecionar Arquivo</span>
+      </label>
+      <input type="file" id="fileInput" name="file" class="upload-input" required>
+      <button type="submit" class="upload-button">Fazer Upload</button>
+      <div id="loadingSpinner" class="loading-spinner">
+        <div class="spinner"></div>
+        <p>Enviando arquivo, por favor aguarde...</p>
+      </div>
+    </div>
+  </form>
+  <div id="result" class="response"></div>
+</div>
+
+<footer style="background-color: #1a1a1a; color: #fff; padding: 20px 0; text-align: center; position: fixed; bottom: 0; width: 100%; z-index: 999;">
+  <p>© Copyright <a href="https://instagram.com/thzfrosty" style="color: #00bfff; text-decoration: none;">ThZ Frosty ¿?</a> to infinity</p>
+</footer>
+
+<!-- Botão e menu de suporte -->
+<div class="support-floating">
+  <div class="support-menu" id="supportMenu">
+    <a class="support-item" href="https://wa.me/559491569380" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/5968/5968841.png" alt="WhatsApp">
+      WhatsApp
+    </a>
+    <a class="support-item" href="https://t.me/SeuCanal" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram">
+      Telegram
+    </a>
+  </div>
+  <button class="support-button" onclick="toggleSupportMenu()">☰</button>
+</div>
+
+<script src="/js/script.js"></script>
+<script src="/js/upload.js"></script>
+<script>
+  function toggleSupportMenu() {
+    const menu = document.getElementById('supportMenu');
+    menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+  }
+</script>
+
+</body>
+</html>
